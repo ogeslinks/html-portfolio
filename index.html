@@ -1,0 +1,1107 @@
+
+<?php
+session_start();
+if(isset($_SESSION["username"])) {
+    header("Location: dashboard.php");
+    exit;
+}
+?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>
+      WAeUP.Kofa - Student Management System
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- stylesheets -->
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="static/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="static/css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="static/css/jquery-ui.css" rel="stylesheet" />
+    <link href="static/css/base.css" rel="stylesheet" />
+    <link href="static_custom/custom.css" rel="stylesheet" />
+    <link href="static/css/file-upload.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <link href="/static/css/IE8.css" rel="stylesheet">
+    <![endif]-->
+
+    <script src="static/js/kofa-functions.js"></script>
+
+    <!-- icons -->
+    <link rel="shortcut icon" href="static_custom/favicon.ico" />
+
+
+  </head>
+
+  <body id="kofa-body"><div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#kofa-primary-nav">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand active kofa-brand-link" href="index.html">UNIBEN</a>
+      </div>
+      <div class="navbar-collapse collapse" id="kofa-primary-nav">
+        <ul class="nav navbar-nav kofa-navbar-left">
+        <li class="">
+  <a href="applicants.html">Application</a>
+</li>
+
+<li class="">
+  <a href="https://alumni.uniben.edu/applicants/checktranscript">Request Transcript</a>
+</li>
+
+<li class="">
+  <a href="enquiries.html">Enquiries</a>
+</li>
+
+        
+    </ul>
+
+        <ul class="nav navbar-nav navbar-right kofa-navbar-right">
+      <li>
+      <a href="login.html">
+          Login
+      </a>
+      </li>
+      
+      
+    </ul>
+	   <ul class="nav navbar-nav navbar-right kofa-navbar-right">
+      <li>
+      <a href="signup.html">
+          SIGN UP
+      </a>
+      </li>
+      
+      
+    </ul>
+      </div><!--/.nav-collapse -->
+    </div><!-- /.navbar --><div class="container">
+
+      <div class="row">
+         <!-- /kofa-maintenance -->
+      </div>
+
+      <div class="row">
+         <!-- /kofa-breadcrumbs-box-long -->
+      </div>
+
+      <div class="row">
+         <!-- /kofa-breadcrumbs-box-short -->
+
+         <!-- /kofa-student-status-box -->
+
+      </div> <!-- /row -->
+
+      <div class="row">
+         <!-- /kofa-sidebar -->
+
+         <!-- /kofa-content-narrow -->
+      </div> <!-- /row -->
+
+      <div class="row">
+        <div class="col-md-12 content kofa-content-wide">
+          <div class="well kofa-content">
+      
+      
+      
+      
+      <div><div id="html"><div class="alert alert-warning">
+<ol>
+
+<!--
+<b>
+<font color = "red">
+UNIVERSITY OF BENIN DISCLAIMER
+<br/>
+
+The attention of the University has been drawn to the existence of a malicious website 
+<br/> uniben-waeup.org/applicants…. that claims to advertise for PRE POST UME.  <br/>
+
+Please note that this is a FRAUDULENT ADVERT and should be completely disregarded  <br/>
+
+For the Avoidance of doubt the University always places all information and adverts on her website.  https://uniben.edu. All other required and relevant links to other sites will be made available there.  Always start your search for authentic UNIBEN information from https://uniben.edu
+<br/>
+
+-->
+<li>
+
+<font color="Green">
+<b>
+THE VICE CHANCELLOR'S MESSAGE OF HOPE AND GOODWILL TO ALL UNIBEN STUDENTS AND PARENTS  ...
+
+<br />
+<a href="https://uniben.waeup.org/documents/VC_M2020/file.pdf"> SEE MESSAGE ... </a>
+<br /> <br />
+<b>
+<li>
+
+UPDATE ON UNIBEN RESUMPTION - RULES AND REGULATIONS FOR RESUMPTION...
+<br />
+<b></b>
+
+<a href="https://uniben.waeup.org/documents/RULES_REG/file.pdf"> UNIBEN RULES AND REGULATIONS  </a>
+<br /> 
+</li>
+
+<font color="black"><br /> 
+
+</font></b></b></font></li>
+
+<li>
+<h4>
+<font color="red">
+Read and Download the UNIBEN student handbook
+From here https://studentaffairs.uniben.edu
+<a href="https://studentaffairs.uniben.edu/" target="image"> STUDENT HAND BOOK ... </a>
+
+<br /> <br />
+STUDENTS AFFAIRS: STUDENTS' RULES AND REGULATIONS 
+<a href="documents/RREG/RREG.pdf" target="image"> RULES AND REGULATIONS ... </a>
+
+</font></h4></li>
+
+<b> 
+<font color="blue">
+<li>   
+
+GRADUATING STUDENTS WISHING TO APPLY FOR NYSC PRE-MOBILIZATION SHOULD PRESENT THEMSELVES AT THE STUDENT AFFAIRS OFFICE AND FILL OUT THE INFORMATION IN THE FORM BELOW.  
+
+<a href="https://forms.gle/smS2gCZY4RG9uJ1K8" target="  image"> APPLY FOR NYSC POSTING  ... </a>
+
+</li> 
+
+<font color="Green">
+
+<br />
+<li>
+
+THE CHARGES FOR SCIENCE AND NON-SCIENCE STUDENTS ADMITTED FOR FULL TIME (UG) 2022/2023 ARE AS SHOWN BELOW....  
+<br /> 
+<b> Please Note that All Students Admitted before the 2022/2023 Session will continue to pay their earlier stated respective charges </b>
+
+<table border="1">
+<tr align="CENTER"> 
+<th>    </th>
+<th> FRESH STUDENTS </th>
+<th>  </th>
+
+</tr>
+<tr align="CENTER"> 
+<th>  DETAILS </th>
+<th padding="7"> SCIENCE </th>
+<th>  NON-SCIENCE </th>
+
+</tr>
+
+<tr> 
+<td align="LEFT"> Examination Fees </td>
+<td align="RIGHT"> 10,000.00 </td>
+<td align="RIGHT"> 10,000.00 </td>
+
+</tr>
+
+<tr> 
+<td align="LEFT"> Labouratory Fees </td>
+<td align="RIGHT"> 15,000.00 </td>
+<td align="RIGHT"> 5,000.00 </td>
+
+</tr>
+
+<tr> 
+<td align="LEFT"> Library / MTN Lib. </td>
+<td align="RIGHT"> 5,000.00 </td>
+<td align="RIGHT"> 5,000.00 </td>
+
+</tr>
+
+<tr> 
+<td align="LEFT"> Sport </td>
+<td align="RIGHT"> 3,500.00 </td>
+<td align="RIGHT"> 3,500.00 </td>
+
+</tr>
+
+<tr> 
+<td align="LEFT"> ICT </td>
+<td align="RIGHT"> 2,500.00 </td>
+<td align="RIGHT"> 2,500.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Counselling </td>
+<td align="RIGHT"> 1,000.00 </td>
+<td align="RIGHT"> 1,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Utility </td>
+<td align="RIGHT"> 7,000.00 </td>
+<td align="RIGHT"> 7,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Med. Charge / TSHIP / Life Ins. </td>
+<td align="RIGHT"> 5,000.00 </td>
+<td align="RIGHT"> 5,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Accreditation  </td>
+<td align="RIGHT"> 15,000.00 </td>
+<td align="RIGHT"> 15,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Sanitation  </td>
+<td align="RIGHT"> 5,000.00 </td>
+<td align="RIGHT"> 5,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Bank Charges / Portal Charges </td>
+<td align="RIGHT"> 3,000.00 </td>
+<td align="RIGHT"> 3,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Development Levy </td>
+<td align="RIGHT"> 20,000.00 </td>
+<td align="RIGHT"> 20,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Student Union Dues </td>
+<td align="RIGHT"> 2,500.00 </td>
+<td align="RIGHT"> 2,500.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> </td>
+<td align="RIGHT"> </td>
+<td align="RIGHT"> </td>
+</tr>
+
+<b>
+<tr> 
+<td align="LEFT"> TOTAL </td>
+<td align="RIGHT"> 95,000.00 </td>
+<td align="RIGHT"> 85,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> </td>
+<td align="RIGHT"> </td>
+<td align="RIGHT"> </td>
+</tr>
+
+<b>
+<tr> 
+<td align="LEFT"> Charges Perculiar to Newly Admitted </td>
+<td align="RIGHT"> </td>
+<td align="RIGHT"> </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Orientation Brochure </td>
+<td align="RIGHT"> 5,000.00 </td>
+<td align="RIGHT"> 5,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Certificate Screening </td>
+<td align="RIGHT"> 5,000.00 </td>
+<td align="RIGHT"> 5,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Academic Gown (Rental) </td>
+<td align="RIGHT"> 5,000.00 </td>
+<td align="RIGHT"> 5,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Forensic ID Card </td>
+<td align="RIGHT"> 5,000.00 </td>
+<td align="RIGHT"> 5,000.00 </td>
+</tr>
+
+<b>
+<tr> 
+<td align="LEFT"> GRAND TOTAL </td>
+<td align="RIGHT"> 115,000.00 </td>
+<td align="RIGHT"> 105,000.00 </td>
+</tr>
+
+<b></b>
+<table></table>
+<br />
+
+<li> 
+
+<h4> UNIBEN HOSTEL ACCOMMODATION 2022/2023 GUIDELINES </h4>
+
+Students interested in Hostel Accommodation on Campus should take note of, and follow these guidelines 
+<br /> <br />
+
+There are also accommodation available off campus as shown in the link below.  Interested students can contact the owners/caretakers listed  ...
+
+<br />
+<a href="documents/offcampus/offcampus.pdf"> SEE ATTACHED DOCUMENT ... </a>
+<br /> 
+
+<!--
+<BR/>
+<font color = "blue">
+<b> NOTICE: All Students that are assigned rooms in the KEYSTONE HOSTEL should go and pay directly to the UNIBEN KEYSTONE BANK AND NOT VIA THE PORTAL. </B>
+For Avoidance of Doubt.  Pay for Keystone Hostel directly in the Keystone bank!
+<BR/> <BR/> 
+-->
+
+<font color="black">
+<br />
+*** Accommodation Booking Charge Payment is Now Enabled for Duly Cleared, Newly admitted students who have paid their school charges. 
+<br />
+
+<!--
+<font color = "BLUE">
+Payment of School charges and accommodation booking charge For Returning Students has now been  enabled for all duly registered students in the previous session (2020/2021)
+<Br/> 
+
+New Date for Booking using the activation code from the booking fee slip is <b> Saturday 31ST December 2022 at 12 noon. <b/>. 
+<BR/> <br/>
+
+If space for your category is finished. Please look out for a new date to be announced.  
+<BR/> <BR/>
+
+All those that have not paid charges and / or registered Courses in the previous session should do so immediately 
+<Br/> 
+
+
+<font color = "black">
+*** Note that All Returning Students that have not yet paid charges and registered their courses Online for 2020/2021 cannot proceed to pay charges for 2021/2022 and therefore cannot pay for accommodation booking code.
+<BR/>
+
+-->
+
+Pay your UNIBEN charges for the session after being CLEARED ONLINE. <br />
+Payment of charges for the new session has been enabled
+<br />
+It is VERY IMPORTANT to ensure that you actually need the accommodation on campus and intend to stay there.  
+<font color="green"> 
+You’re not allowed to book and then transfer to another student as this is an OFFENSE! </font></font></li></b>
+<br />
+<font color="black"></font>
+** Log into your student online record. 
+<br />
+** Under Accommodation, Select Particular Hall of Interest. 
+<br />
+** You can also choose "No Favoured Hostel"
+<br />
+** Under Payments, Create Bed Allocation ticket. Make payment using any valid ATM card from you Student Profile. Do NOT make payment directly on the Remita website since it has no way of linking back directly to your profile
+<br />
+** Your assigned space from Student Affairs will be uploaded WHERE available. Please check back after a minimum of 2 days after making request
+<br />
+** Those assigned spaces from Student Affairs also need to use their booking code in order to view the space assigned to them
+<br />
+** Immediately proceed to pay the relevant Hostel Maintenance fee assigned to your allocated space, upon successful booking.
+<br />
+** Print out relevant Slips to use for clearance into the Halls of Residence.
+<br /> 
+
+<!--
+Please Note that all allocated spaces not paid for will be released back to circulation after 48 hours.  
+<BR/>
+For the avoidance of doubt, Note that allocated spaces will be retrieved and become available for others to book after 2 days (48 hrs) of not paying Hostel maintenance fee.
+<BR/>
+Any Student allocated a space in the reserved halls, is also expected to go ahead and book with their activation code and to Immediately proceed to pay the relevant Hostel Maintenance fee assigned to your allocated space, within 48 hrs, upon successful booking.
+<BR/>
+-->
+
+
+<b>
+Best of Luck
+</b>
+<br />
+
+<br />
+
+<!--
+** If desired Hostel is any of Hall 1, 2, 3, 4. or Ekenwan Campus undergraduate Hostels .  Go ahead and directly book your particular space using the activation code (HOS-... ) on your payment slip, 
+<br/>
+** If desired Hostel is any of Hall 5 6, 7, Keystone, NDDC, Clinicl. etc. Your assigned space from Student Affairs will be uploaded WHERE available. 
+<br/>
+
+
+-->
+
+<font color="Blue">
+<li>  
+<b> NEWLY ADMITTED STUDENTS REQUIREMENTS FOR ONLINE CLEARANCE   -   Upon Successful Creation and Payment of the relevant acceptance Fee as listed below <b></b>
+<br /> <br />
+Documents required to be uploaded <br />
+1. Birth Certificate or Age declaration <br />
+2. WAEC or NECO/NABTEB result:- Statement of result or certificate <br /> (Certificates are expected from 2019 and below for WAEC, and 2017 and below for NECO, NABTEB) <br />
+3. Scratch Card(s) to enable access to the above uploaded results NECO; WAEC; NABTEB: etc should be uploaded to enable confirmation of same. <br />
+4. Local Government of origin Certificate or Affidavit of Local Government Area of origin <br />
+5.	Jamb result slip with passport <br />
+6.	Jamb admission letter (Institution copy) <br />
+7.	Acceptance letter <br />
+8.	Guarantor' s letter <br />
+9.	Affidavit of Good Conduct <br />
+10.	Affidavit of Non-Membership of secret cult <br />
+11.     A RED BACKGROUND PASSPORT AT THE SIDE OF THE JAMB BIOMETRIC PICTURE <br />
+<br />
+</b></li>
+
+<li>  * PAY YOUR ACCEPTANCE FEE      * UPLOAD RELEVANT DOCUMENTS      *REQUEST CLEARANCE  *   REMEMBER TO UPLOAD SCAN OF SCRATCH CARD(S) THAT MATCH SUBMITTED RESULTS     * ONLY RECORD OF THOSE THAT REQUEST CLEARANCE CAN BE PROCESSED AND CLEARED.     "  Note that there is NO NEED TO COME INTO CAMPUS AS THESE ACTIVITIES WILL BE CARRIED OUT ONLINE.     * SUCCESSFULLY CLEARED STUDENTS WILL COLLECT THEIR SIGNED ELIGIBILIYY DOCUMENT UPON RESUMPTION ON CAMPUS AT A DATE TO BE ANNOUNCED.
+<br />
+* SUCCESSFULLY CLEARED STUDENTS SHOULD THEN PROCEED TO PAY SCHOOL CHARGES; THEN     * GO ON TO REGISTER YOUR COURSES ONLINE     * PRESENT YOURSELF TO YOUR COURSE ADVISER FOR VALIDATION OF COURSES
+<br /> <br /> 
+
+THE ACCEPTANCE FEE FOR 2021/2022 SESSION IS AS SHOWN BELOW
+<table border="1">
+<tr align="CENTER"> 
+<th> S/NO </th>
+<th>  ITEMS  </th>
+<th> COLLEGE OF MEDICAL SCIENCES CANDIDATES (N)</th>
+<th>  OTHER CANDIDATES  (N)  </th>
+</tr>
+<tr> 
+<td align="RIGHT">1</td>
+<td> BANK/PORTAL CHARGES </td>
+<td align="RIGHT">5,000.00</td>
+<td align="RIGHT">5,000.00</td>
+</tr>
+<tr> 
+<td align="RIGHT">2</td>
+<td>ADMISSION CLEARANCE</td>
+<td align="RIGHT">30,000.00</td>
+<td align="RIGHT">30,000.00</td>
+</tr>
+<tr> 
+<td align="RIGHT">3</td>
+<td> ICT LEVY</td>
+<td align="RIGHT">6,000.00</td>
+<td align="RIGHT">6,000.00</td>
+</tr>
+<tr> 
+<td align="RIGHT">4</td>
+<td>MAINTENANCE FEE</td>
+<td align="RIGHT">15,000.00</td>
+<td align="RIGHT">15,000.00</td>
+</tr>
+<tr> 
+<td align="RIGHT">5</td>
+<td>MTN NET LIBRARY</td>
+<td align="RIGHT">4,000.00</td>
+<td align="RIGHT">4,000.00</td>
+</tr>
+<tr>
+<strong> 
+<td align="RIGHT">6</td>
+<td>COLLEGE DEVELOPMENT LEVY (MEDICAL STUDENTS ONLY)</td>
+<td align="RIGHT">20,000.00</td>
+<td align="CENTER"> - </td>
+</strong>
+</tr>
+<tr> 
+<td> </td>
+<td>TOTAL</td>
+<td align="RIGHT">80,000.00</td>
+<td align="RIGHT">60,000.00</td>
+</tr>
+</table>
+<br />
+</li>
+
+<font color="black">
+
+
+<li> Please Note that those that are yet to accept their admission on the JAMB CAPS page cannot be created on your UNIBEN KOFA page.
+
+Go to 
+<a href="https://www.jamb.org.ng/efacility./"> Accept your admission on JAMB CAPS WEB PAGE ... </a>
+<br /> <br />
+
+</li>
+
+
+
+<li>
+<h4> <b>
+
+FOR THOSE PREPARING FOR POST UTME AND OTHER TYPES OF COMPUTER BASED TESTS COMING UP SEE BELOW...
+<br /> <br />
+
+UNIVERSITY OF BENIN TUTORIALS..... POWERED BY UNIBEN CONSULT
+<br /> 
+<a href="https://uniben.waeup.org/documents/ADV2021/file.pdf" target="image"> SEE DETAILS... </a>
+
+</b></h4>
+<br /> <br />
+
+</li>
+
+
+
+<font color="black">
+<li>
+ALL DULY CLEARED STUDENTS WHO ARE YET TO COLLECT THEIR UNIBEN ID CARD; PLEASE FOLLOW THE PROCESS BELOW.
+<br />
+TO UPLOAD YOUR SIGNATURE FOR STUDENT ID CARD ON KOFA PAGE
+<br />
+1.	SIGN YOUR SIGNATURE ON WHITE BLANK SHEET USING BLACK PEN.
+<br />
+2.	LOG INTO YOUR KOFA RECORD
+<br />
+3.	CLICK <b> UPLOAD SIGNATURE </b> BUTTON 
+<br />
+4.	UPLOAD SCANNED COPY OF YOUR SIGNATURE
+<br />
+5.	UPDATE YOUR PERSONAL DATA PAGE ESPECIALLY WITH YOUR PERMANENT ADDRESS AND NEXT OF KIN INFO
+<br />
+</li>
+<br /> <br />
+
+<b>
+<li>
+<b>
+
+THE HOSTEL ACCOMMODATION FEES FOR 2021/2022 SESSION ARE SHOWN BELOW
+<table border="1">
+<tr align="CENTER"> 
+<th> S/NO </th>
+<th>  HOSTEL </th>
+<th> DEMARCATION </th>
+<th>   AMOUNT  ( N )  </th>
+</tr>
+
+<tr> 
+<td align="RIGHT">1. </td>
+<td> NDDC HOSTEL</td>
+<td align="RIGHT"> </td>
+<td align="RIGHT"> 35,000.00</td>
+</tr>
+
+<tr> 
+<td align="RIGHT">2. </td>
+<td> HALL 5</td>
+<td align="RIGHT"> </td>
+<td align="RIGHT"> 25,000.00</td>
+</tr>
+
+<tr> 
+<td align="RIGHT">3. </td>
+<td> HALL 6</td>
+<td align="RIGHT"> </td>
+<td align="RIGHT"> 40,000.00</td>
+</tr>
+
+<tr> 
+<td align="RIGHT">4. </td>
+<td> OTHER HOSTELS</td>
+<td align="RIGHT"> </td>
+<td align="RIGHT"> 17,000.00</td>
+</tr>
+
+<tr> 
+<td align="RIGHT">5. </td>
+<td> FESTUS AKINGBOLA </td>
+<td align="LEFT"> 3RD FLOOR </td>
+<td align="RIGHT"> 62,000.00</td>
+</tr>
+
+<tr> 
+<td align="RIGHT">6. </td>
+<td align="CENTER"> " </td>
+<td align="CENTER">TOP BUNK </td>
+<td align="RIGHT">25,000.00</td>
+</tr>
+
+<tr> 
+<td align="RIGHT">7. </td>
+<td align="CENTER"> " </td>
+<td align="CENTER"> DOWN BUNK </td>
+<td align="RIGHT">36,000.00</td>
+</tr>
+
+<tr> 
+<td align="RIGHT">8. </td>
+<td> INTERCONTINENTAL HOSTEL </td>
+<td align="CENTER"> </td>
+<td align="RIGHT">62,000.00</td>
+</tr>
+
+<tr> 
+<td align="RIGHT">9. </td>
+<td> PG HOSTEL EKENWAN </td>
+<td align="RIGHT"> </td>
+<td align="RIGHT">50,000.00</td>
+</tr>
+
+<tr> 
+<td align="RIGHT">9. </td>
+<td> EKENWAN FEMALE FINAL YEAR HOSTEL </td>
+<td align="RIGHT"> </td>
+<td align="RIGHT">50,000.00</td>
+</tr>
+
+<tr>
+<strong> 
+<td align="RIGHT">10. </td>
+<td> HALL 7 </td>
+<td align="RIGHT"> </td>
+<td align="RIGHT">75,000.00</td>
+</strong>
+</tr>
+
+<tr> 
+<td align="RIGHT">11. </td>
+<td> KEYSTONE HOSTEL</td>
+<td align="RIGHT"> </td>
+<td align="RIGHT">75,000.00</td>
+</tr>
+
+</table>
+</b></li>
+<br /> 
+
+<!--
+<font color = "Blue">
+<li>  
+JOINT UNIVERSITIES PRELIMINARY EXAMINATIONS BOARD (JUPEB) 
+STUDENTS FOR 2020/2021 have resumed Lectures on 25th January 2021...
+
+<br/>
+<BR/> 
+</li>
+
+<font color = "green">
+
+<li>  
+Post Direct Entry screening Exercise 2020/2021 Opens on Friday 13th November 2020..
+<br/>
+Closing Date is Midnight of Monday 30th November 2020
+<BR/> 
+th           <a href="https://uniben.waeup.org/applicants/pude2020/index"> Apply for Screening Here ... </a>
+<BR/> <BR/> 
+</li>
+
+<font color = "Blue">
+<li>  
+Admission screening Exercise 2020/2021 Opens on Monday 17th August 2020..
+<br/>
+Closing Date is now Extended to Midnight of Monday 19th November 2020
+<BR/> 
+<a href="https://uniben.waeup.org/applicants/ase2020/index"> Apply for Screening Here ... </a>
+<BR/> <BR/> 
+</li>
+
+
+<font color = "Green">
+
+<li>  
+UNIBEN CBT Practice Test 2020/2021 Opens on Monday 17th August 2020..
+<BR/> 
+<a href="https://uniben.waeup.org/applicants/cbt2020/index"> Apply for Practice Test Here ... </a>
+<BR/> <BR/> 
+</li>
+
+-->
+
+
+<!--
+
+RETURNING STUDENTS PAYMENT OF CHARGES Starts On WEDNESDAY 8TH JANUARY 2020 @ 10AM. 
+
+-->
+
+<br />
+<li>
+THE CHARGES FOR SCIENCE AND NON-SCIENCE STUDENTS FOR FULL TIME (UG) ADMITTED AS FROM 2017/2018 ARE AS SHOWN BELOW
+
+<table border="1">
+<tr align="CENTER"> 
+<th>    </th>
+<th> FRESH STUDENTS </th>
+<th>  </th>
+<th>  RETURNING STUDENTS </th>
+<th>  </th>
+</tr>
+<tr align="CENTER"> 
+<th>  DETAILS </th>
+<th padding="5"> SCIENCE </th>
+<th>  NON-SCIENCE </th>
+<th>  SCIENCE  </th>
+<th>  NON-SCIENCE  </th>
+</tr>
+
+<tr> 
+<td align="LEFT"> Tuition </td>
+<td align="RIGHT">  </td>
+<td align="RIGHT">  </td>
+<td align="RIGHT">  </td>
+<td align="RIGHT">  </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Examination Fees </td>
+<td align="RIGHT"> 7,000.00 </td>
+<td align="RIGHT"> 5,000.00 </td>
+<td align="RIGHT"> 7,000.00 </td>
+<td align="RIGHT"> 5,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Labouratory Fees </td>
+<td align="RIGHT"> 3,000.00 </td>
+<td align="RIGHT"> 1,500.00 </td>
+<td align="RIGHT"> 3,000.00 </td>
+<td align="RIGHT"> 1,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Library / MTN Lib. </td>
+<td align="RIGHT"> 2,000.00 </td>
+<td align="RIGHT"> 2,000.00 </td>
+<td align="RIGHT"> 2,000.00 </td>
+<td align="RIGHT"> 2,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Admission Brochure </td>
+<td align="RIGHT"> 1,500.00 </td>
+<td align="RIGHT"> 1,500.00 </td>
+<td align="RIGHT">  </td>
+<td align="RIGHT">  </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Orientation Brochure </td>
+<td align="RIGHT"> 1,500.00 </td>
+<td align="RIGHT"> 1,500.00 </td>
+<td align="RIGHT">  </td>
+<td align="RIGHT">  </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Sport </td>
+<td align="RIGHT"> 1,000.00 </td>
+<td align="RIGHT"> 1,000.00 </td>
+<td align="RIGHT"> 1,000.00 </td>
+<td align="RIGHT"> 1,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Student Comm Service  </td>
+<td align="RIGHT"> 1,000.00 </td>
+<td align="RIGHT"> 1,000.00 </td>
+<td align="RIGHT">  </td>
+<td align="RIGHT">  </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Student Handbook Brochure </td>
+<td align="RIGHT"> 1,500.00 </td>
+<td align="RIGHT"> 1,500.00 </td>
+<td align="RIGHT">  </td>
+<td align="RIGHT">  </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Utility </td>
+<td align="RIGHT"> 7,000.00 </td>
+<td align="RIGHT"> 7,000.00 </td>
+<td align="RIGHT"> 7,000.00 </td>
+<td align="RIGHT"> 7,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Med. Char / TSHIP /NHIS / Life Ins </td>
+<td align="RIGHT"> 7,400.00 </td>
+<td align="RIGHT"> 7,400.00 </td>
+<td align="RIGHT"> 3,400.00 </td>
+<td align="RIGHT"> 3,400.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Verification of Results </td>
+<td align="RIGHT"> 5,000.00 </td>
+<td align="RIGHT"> 5,000.00 </td>
+<td align="RIGHT">  </td>
+<td align="RIGHT">  </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Medical Exam / Eye Test </td>
+<td align="RIGHT"> 5,500.00 </td>
+<td align="RIGHT"> 5,500.00 </td>
+<td align="RIGHT">  </td>
+<td align="RIGHT">  </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Academic Gown (Rental) </td>
+<td align="RIGHT"> 5,000.00 </td>
+<td align="RIGHT"> 5,000.00 </td>
+<td align="RIGHT">  </td>
+<td align="RIGHT">  </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Forensic ID Card </td>
+<td align="RIGHT"> 2,000.00 </td>
+<td align="RIGHT"> 2,000.00 </td>
+<td align="RIGHT">  </td>
+<td align="RIGHT">  </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Bank Charges / Portal Charges </td>
+<td align="RIGHT"> 2,000.00 </td>
+<td align="RIGHT"> 2,000.00 </td>
+<td align="RIGHT"> 1,000.00 </td>
+<td align="RIGHT"> 1,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Development Levy </td>
+<td align="RIGHT"> 20,000.00 </td>
+<td align="RIGHT"> 20,000.00 </td>
+<td align="RIGHT"> 20,000.00 </td>
+<td align="RIGHT"> 20,000.00 </td>
+</tr>
+
+<tr> 
+<td align="LEFT"> Student Union Dues </td>
+<td align="RIGHT"> 1,000.00 </td>
+<td align="RIGHT"> 1,000.00 </td>
+<td align="RIGHT"> 1,000.00 </td>
+<td align="RIGHT"> 1,000.00 </td>
+</tr>
+<b>
+<tr> 
+<td align="LEFT"> TOTAL </td>
+<td align="RIGHT"> 73,400.00 </td>
+<td align="RIGHT"> 69,900.00 </td>
+<td align="RIGHT"> 45,400.00 </td>
+<td align="RIGHT"> 41,400.00 </td>
+</tr>
+<b></b>
+<table></table>
+<b></b>
+<br /> 
+<br />
+<!--
+
+<li>
+<b> UNIBEN 2019/2020 CLEARANCE EXERCISE FOR UTME & DIRECT ENTRY CANDIDATES. 
+<BR/> <BR/> 
+* PAY YOUR ACCEPTANCE FEE  *  UPLOAD RELEVANT DOCUMENTS  *   REQUEST CLEARANCE * PROCEED FOR FACE - TO FACE CLEARANCE AT YOUR FACULTY FROM DATE OF RESUMPTION.
+<BR/> <BR/> 
+
+DATE OF START OF PHYSICAL CLEARANCE FOR NEWLY ADMITTED STUDENTS (FRESHERS) - 7TH JANUARY 2020.
+<BR/> 
+CONFIRM YOUR EXACT DATE ON YOUR PORTAL RECORD
+<BR/> <BR/>
+
+THE ACCEPTANCE FEE FOR 2019/2020 IS AS SHOWN BELOW
+<table border = "1">
+<tr ALIGN = "CENTER"> 
+<th> S/NO </th>
+<th>  ITEMS  </th>
+<th>COLLEGE OF MEDICAL SCIENCES CANDIDATES  ( N )</th>
+<th>   OTHER CANDIDATES  ( N )  </th>
+</tr>
+<tr> 
+<td ALIGN = "RIGHT" >1</td>
+<td> BANK/PORTAL CHARGES </td>
+<td ALIGN = "RIGHT">5,000.00</td>
+<td ALIGN = "RIGHT">5,000.00</td>
+</tr>
+<tr> 
+<td ALIGN = "RIGHT">2</td>
+<td>ADMISSION CLEARANCE</td>
+<td ALIGN = "RIGHT">30,000.00</td>
+<td ALIGN = "RIGHT">30,000.00</td>
+</tr>
+<tr> 
+<td ALIGN = "RIGHT">3</td>
+<td> ICT LEVY</td>
+<td ALIGN = "RIGHT">6,000.00</td>
+<td ALIGN = "RIGHT">6,000.00</td>
+</tr>
+<tr> 
+<td ALIGN = "RIGHT">4</td>
+<td>MAINTENANCE FEE</td>
+<td ALIGN = "RIGHT">15,000.00</td>
+<td ALIGN = "RIGHT">15,000.00</td>
+</tr>
+<tr> 
+<td ALIGN = "RIGHT">5</td>
+<td>MTN NET LIBRARY</td>
+<td ALIGN = "RIGHT">4,000.00</td>
+<td ALIGN = "RIGHT">4,000.00</td>
+</tr>
+<tr>
+<STRONG> 
+<td ALIGN = "RIGHT">6</td>
+<td>COLLEGE DEVELOPMENT LEVY (MEDICAL STUDENTS ONLY)</td>
+<td ALIGN = "RIGHT">20,000.00</td>
+<td ALIGN = "CENTER" > - </td>
+</STRONG>
+</tr>
+<tr> 
+<td> </td>
+<td>TOTAL</td>
+<td ALIGN = "RIGHT">80,000.00</td>
+<td ALIGN = "RIGHT">60,000.00</td>
+</tr>
+</table>
+<br/>
+</li>
+
+-->
+
+<li>
+<b>
+RETURNING STUDENTS SHOULD ENSURE THAT THEY HAVE MADE PAYMENT FOR THEIR CHARGES FOR PREVIOUS ACADEMIC SESSION! 
+<br />
+THEY ARE TO PAY THEIR RESPECTIVE CHARGES AND REGISTER THEIR COURSES FOR THE THE ACADEMIC SESSION.
+<br />
+THEY ARE ALSO EXPECTED TO UPDATE THEIR PERSONAL DATA FORMS WITH INFORMATION SUCH AS PERMANENT ADDRESS;NEXT OF KIN; ETC. 
+<br />
+NOTE THAT THEY ARE TO THEN VISIT THEIR COURSE ADVISERS FOR VALIDATION OF REGISTERED COURSES.
+<br />
+ONLY THEN CAN THEY PROCEED INTO THE NEW ACADEMIC SESSION
+<br />
+<br />
+<b></b>
+</b></li>
+
+<li>
+RETURNING STUDENTS ARE EXPECTED TO MAKE PAYMENT OF CHARGES FOR THE ACTIVE ACADEMIC SESSION 
+<br />
+THEY ARE TO PAY THEIR RESPECTIVE CHARGES AND REGISTER THEIR COURSES FOR THE NEW ACADEMIC SESSION.
+<br />
+NOTE THAT THEY ARE TO THEN VISIT THEIR COURSE ADVISERS FOR VALIDATION OF REGISTERED COURSES.
+<br />
+<b> CHARGE FOR LATE PAYMENT / REGISTRATION IS ACTIVATED FOR THE ACTIVE SESSION 5 WEEKS AFTER RESUMPTION. 
+<br />
+THE LATE CHARGE IS N10,0000 
+<br />
+TO AVOID THE ABOVE PENALTY, STUDENTS ARE THEREFORE ENCOURAGED TO PAY ON TIME
+<br /> <br />
+<b></b>
+</b></li>
+
+
+<li>
+NOTE THAT ALL STUDENTS ARE EXPECTED TO COMPLETE ALL THE INFORMATION REQUESTED IN THEIR PERSONAL DATA FORMS.  FRESHERS SHOULD PARTICULARLY TAKE NOTE THAT FAILURE TO DO THIS MEANS THEY CANNOT RECEIVE THEIR UNIVERSITY IDENTITY CARDS
+<br /><br />
+</li>
+
+
+
+
+<h1>Welcome to Uniben.Kofa
+<br />
+<small>
+The Student Information and Registration Portal
+of the University of Benin
+</small>
+</h1>
+
+</b><p>
+Kofa is part of the
+<a href="https://waeup.org/">West African eUniversity Project (WAeUP)</a>.
+It is a powerful and comprehensive Student Management System which will become
+the single access point to educational resources and information to all
+University of Benin students.
+</p>
+<p>
+Kofa controls application and student registration processes and
+provides comprehensive and transparent
+information about study progress. 
+</p>
+<br />
+<h3>
+Instructions for 2015-2016 JUPEB FOUNDATION Clearance Exercise
+</h3>
+ <p>
+<a href="https://uniben.waeup.org/documents/jupeb2015/file.pdf">Download 
+pdf</a>
+
+</p><h3>
+Instructions for 2015-2016 PUTME/PUDE Clearance Exercise
+</h3>
+ <p>
+<a target="image" href="https://uniben.waeup.org/documents/putme2015/file.pdf">Download pdf</a>
+</p>
+
+<h3>
+Instructions for 2015-2016 ONLINE HOSTEL ACCOMMODATION BOOKING
+</h3>
+ <p>
+<a target="image" href="https://uniben.waeup.org/documents/hostel17/file.pdf">Download pdf</a>
+</p>
+
+
+<h3>
+Instructions for 2014-2015 PART TIME/DIPLOMA Clearance Exercise
+</h3>
+<p>
+<a href="https://uniben.waeup.org/downloads/clearancept2014.pdf">Download pdf</a>
+</p>
+
+<h3>
+Payment Instructions 
+</h3>
+
+<p>
+<a href="https://uniben.waeup.org/downloads/ReturningStudentInstruction.pdf">Download pdf</a>
+</p>
+
+<h3>
+Part-Time 2015/2016 Admission Requirements 
+</h3>
+
+<p>
+<a href="https://uniben.waeup.org/documents/admb2014/file.pdf">Download pdf</a>
+</p>
+
+
+      <br />
+    
+    <!-- /Diazo element-->
+
+  </table></li></b></font></font></font></b></b></table></li></font></font></b></ol></div></div></div></div> <!-- /well kofa-content-->
+        </div> <!-- /kofa-content-wide -->
+      </div> <!-- /row -->
+      <div id="bottom" class="footer">
+        <p class="credit muted text-right">
+          Kofa - Student Management System<br />
+          Copyright © WAeUP Group
+          <script type="text/javascript">
+          renderCurrentYear();
+          </script>
+        </p>
+      </div>
+    </div><!-- /container --><script src="../code.jquery.com/jquery-1.9.1.min.js"></script><script src="static/bootstrap/js/bootstrap.min.js"></script><script src="static/js/kofa-scroll.js"></script><script src="static/js/kofa-activate-tab.js"></script><script src="static/js/kofa-scrollto.js"></script><script src="static/js/file-upload.js"></script><script class="jquery-ui" src="static/js/jquery-ui.min.js"></script></body>
+
+<!-- Mirrored from waeup.uniben.edu/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Aug 2023 07:23:50 GMT -->
+</html>
